@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bento_bg">
+
+    <!-- Perfectly centered splash content -->
+    <LinearLayout
+        android:id="@+id/splash_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- Measurement Lab Rounded Card Logo -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_splash_logo"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="8dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/bento_primary">
+
+            <ImageView
+                android:id="@+id/img_splash_logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_app_icon"
+                android:contentDescription="Measurement Lab Logo" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Application Title -->
+        <TextView
+            android:id="@+id/txt_splash_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Measurement Lab"
+            android:textColor="@color/bento_text_dark"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:letterSpacing="-0.01" />
+
+        <!-- Tagline -->
+        <TextView
+            android:id="@+id/txt_splash_tagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convert with Precision"
+            android:textColor="@color/bento_text_muted"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:letterSpacing="0.05" />
+
+        <!-- Progress Indicator -->
+        <ProgressBar
+            android:id="@+id/splash_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="140dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="48dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/bento_primary" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="32dp"
+        android:text="SECURE &amp; OFFLINE"
+        android:textColor="@color/bento_text_muted"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.2" />
+
+</FrameLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/bento_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/bento_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/bento_on_primary_container</item>
+        <item name="colorSecondaryContainer">@color/bento_secondary_container</item>
+
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/bento_bg</item>
+    </style>
+</resources>

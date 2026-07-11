@@ -1,0 +1,83 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    
+    <!-- Outer Soft Glass/Lavender Card -->
+    <path
+        android:pathData="M20,15h80c11,0 20,9 20,20v50c0,11 -9,20 -20,20H20C9,105 0,96 0,85V35C0,24 9,15 20,15Z"
+        android:fillColor="@color/bento_primary_container" />
+        
+    <!-- Decorative Ruler Body -->
+    <path
+        android:pathData="M28,44h64c4.4,0 8,3.6 8,8v16c0,4.4 -3.6,8 -8,8H28c-4.4,0 -8,-3.6 -8,-8V52c0,-4.4 3.6,-8 8,-8Z"
+        android:fillColor="@color/bento_white" />
+
+    <!-- Ruler notches (tick marks) -->
+    <path
+        android:pathData="M32,44v6"
+        android:strokeColor="@color/bento_primary"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M40,44v4"
+        android:strokeColor="@color/bento_primary"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M48,44v6"
+        android:strokeColor="@color/bento_primary"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M56,44v4"
+        android:strokeColor="@color/bento_primary"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M64,44v6"
+        android:strokeColor="@color/bento_primary"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M72,44v4"
+        android:strokeColor="@color/bento_primary"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M80,44v6"
+        android:strokeColor="@color/bento_primary"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M88,44v4"
+        android:strokeColor="@color/bento_primary"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"/>
+
+    <!-- Conversion Arrows integrated in the center -->
+    <path
+        android:pathData="M44,68h32"
+        android:strokeColor="@color/bento_primary"
+        android:strokeWidth="3"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M44,68l6,-6M44,68l6,6"
+        android:strokeColor="@color/bento_primary"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+        
+    <path
+        android:pathData="M76,60h-32"
+        android:strokeColor="@color/bento_primary"
+        android:strokeWidth="3"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M76,60l-6,-6M76,60l-6,6"
+        android:strokeColor="@color/bento_primary"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

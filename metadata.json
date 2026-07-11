@@ -1,0 +1,6 @@
+{
+  "name": "Unit Converter",
+  "description": "A elegant offline unit converter designed with Jetpack Compose, supporting conversion of Length, Weight, Temperature, and Volume.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

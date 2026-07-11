@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Mode Bento Grid Theme Colors -->
+    <color name="bento_bg">#141218</color>
+    <color name="bento_text_dark">#E6E1E5</color>
+    <color name="bento_text_muted">#938F99</color>
+    <color name="bento_primary">#D0BCFF</color>
+    <color name="bento_primary_container">#4F378B</color>
+    <color name="bento_on_primary_container">#EADDFF</color>
+    <color name="bento_secondary_container">#332D41</color>
+    <color name="bento_border">#49454F</color>
+    <color name="bento_selected">#4F378B</color>
+    <color name="bento_white">#1D1B20</color> <!-- Dark background for cards -->
+    <color name="card_stroke">#20FFFFFF</color>
+</resources>

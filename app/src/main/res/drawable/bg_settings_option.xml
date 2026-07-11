@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/bento_secondary_container">
+    <item>
+        <selector>
+            <!-- Selected / Checked theme option (filled card look) -->
+            <item android:state_checked="true">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/bento_primary_container" />
+                    <corners android:radius="14dp" />
+                    <stroke
+                        android:width="1.5dp"
+                        android:color="@color/bento_primary" />
+                </shape>
+            </item>
+            <!-- Unselected / Default theme option -->
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/bento_white" />
+                    <corners android:radius="14dp" />
+                    <stroke
+                        android:width="1dp"
+                        android:color="@color/bento_border" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+</ripple>

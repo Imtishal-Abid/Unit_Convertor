@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Unit Converter</string>
+    <string name="label_input_value">Value to Convert</string>
+    <string name="label_source_unit">From</string>
+    <string name="label_target_unit">To</string>
+    <string name="btn_convert">CONVERT</string>
+    <string name="placeholder_input">e.g. 100</string>
+    <string name="txt_result_title">Conversion Result</string>
+    <string name="btn_copy">Copy</string>
+    <string name="msg_copied">Result copied to clipboard</string>
+</resources>

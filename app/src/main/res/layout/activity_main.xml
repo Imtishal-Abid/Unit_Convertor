@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/bento_bg">
+
+    <!-- Balanced Header / Top App Bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/bento_white"
+        android:elevation="4dp"
+        android:paddingHorizontal="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/settings_badge"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_measurement_logo"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="Measurement Lab Logo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Measurement Lab"
+                    android:textColor="@color/bento_primary"
+                    android:textSize="21sp"
+                    android:fontFamily="sans-serif-black"
+                    android:textStyle="bold"
+                    android:letterSpacing="-0.02" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Convert with Precision"
+                    android:textColor="@color/bento_text_muted"
+                    android:textSize="10.5sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.06" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Slightly smaller settings button to match the title balance perfectly -->
+        <FrameLayout
+            android:id="@+id/settings_badge"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_button_swap"
+            android:backgroundTint="@color/bento_primary_container"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/bento_primary"
+                android:contentDescription="Settings" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <!-- Scrollable content area containing Bento grid blocks -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp">
+
+            <!-- Category Selector Bento Card (Reduced spacing) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_bento_card"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SELECT CATEGORY"
+                    android:textColor="@color/bento_primary"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="4dp" />
+
+                <!-- Fully integrated Spinner popup styling -->
+                <Spinner
+                    android:id="@+id/spinner_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:spinnerMode="dropdown"
+                    android:overlapAnchor="false"
+                    android:dropDownWidth="match_parent"
+                    android:popupBackground="@drawable/bg_spinner_popup"
+                    android:backgroundTint="@color/bento_primary" />
+            </LinearLayout>
+
+            <!-- Recent Conversions Bento Card (Compact) -->
+            <LinearLayout
+                android:id="@+id/layout_recent_conversions_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_bento_card"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RECENT CONVERSIONS"
+                    android:textColor="@color/bento_primary"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="6dp" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:overScrollMode="never">
+
+                    <LinearLayout
+                        android:id="@+id/layout_recent_chips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" />
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <!-- Enter Value Bento Card (Compact) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_bento_card"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ENTER VALUE"
+                    android:textColor="@color/bento_primary"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="2dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edit_input_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@id/layout_badge"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:hint="0.0"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/bento_text_dark"
+                        android:textColorHint="@color/bento_text_muted"
+                        android:textSize="32sp"
+                        android:textStyle="normal"
+                        android:maxLines="1" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_badge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_bento_spinner_to"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txt_source_symbol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="@color/bento_text_dark"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- Stacking From and To Selectors vertically (More compact with clear scanning cues) -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:id="@+id/layout_units_stack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- From Unit Card (Input Section) -->
+                    <LinearLayout
+                        android:id="@+id/card_from_unit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_bento_spinner_from"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:layout_marginBottom="3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="FROM (INPUT)"
+                            android:textColor="@color/bento_on_primary_container"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.08" />
+
+                        <Spinner
+                            android:id="@+id/spinner_from"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="2dp"
+                            android:spinnerMode="dropdown"
+                            android:overlapAnchor="false"
+                            android:dropDownWidth="match_parent"
+                            android:popupBackground="@drawable/bg_spinner_popup"
+                            android:backgroundTint="@color/bento_on_primary_container" />
+                    </LinearLayout>
+
+                    <!-- To Unit Card (Output Section) -->
+                    <LinearLayout
+                        android:id="@+id/card_to_unit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_bento_spinner_to"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:layout_marginTop="3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TO (RESULT)"
+                            android:textColor="@color/bento_text_dark"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.08" />
+
+                        <Spinner
+                            android:id="@+id/spinner_to"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="2dp"
+                            android:spinnerMode="dropdown"
+                            android:overlapAnchor="false"
+                            android:dropDownWidth="match_parent"
+                            android:popupBackground="@drawable/bg_spinner_popup"
+                            android:backgroundTint="@color/bento_text_dark" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Floating Swap Button placed perfectly between From and To cards -->
+                <FrameLayout
+                    android:id="@+id/btn_swap_units"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/bg_button_swap"
+                    android:elevation="4dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="⇅"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+            </RelativeLayout>
+
+            <!-- Active Convert Button (Highly Distinct & Tappable) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_convert_tactile"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/btn_convert"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/bento_primary"
+                app:cornerRadius="14dp"
+                app:icon="?android:attr/actionModeWebSearchDrawable"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white"
+                tools:ignore="PrivateResource" />
+
+            <!-- Result Bento Card (Reduced Height & Converted Value Focal Point) -->
+            <RelativeLayout
+                android:id="@+id/card_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_bento_primary_card"
+                android:elevation="3dp"
+                android:padding="12dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@id/btn_copy_result"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CONVERTED VALUE"
+                        android:textColor="@color/bento_primary_container"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.08" />
+
+                    <!-- Converted value is now the primary focal point -->
+                    <TextView
+                        android:id="@+id/txt_result_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.0"
+                        android:textColor="@color/white"
+                        android:textSize="42sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="1dp" />
+
+                    <TextView
+                        android:id="@+id/txt_result_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Inches"
+                        android:textColor="@color/bento_primary_container"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="1dp" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_copy_result"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="0dp"
+                    app:icon="?attr/actionModeCopyDrawable"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:iconSize="18dp"
+                    app:iconTint="@color/white"
+                    app:backgroundTint="#26FFFFFF"
+                    app:cornerRadius="10dp" />
+            </RelativeLayout>
+
+            <!-- History Section (Reduced vertical padding) -->
+            <LinearLayout
+                android:id="@+id/layout_history_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_bento_card"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CONVERSION HISTORY"
+                    android:textColor="@color/bento_primary"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:id="@+id/layout_history_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
